@@ -61,7 +61,7 @@ export default function HomePage() {
                 <h3 className="text-xl font-semibold text-white">{product.heading}</h3>
                 <p className="text-gray-400 text-sm mb-4 line-clamp-1">{product.paragraphs[0]}</p>
 
-                <Link href={`/blog/${product.id}`}>
+                <Link href={`/products`}>
                   <button className="text-indigo-500 hover:underline">Read Full Article</button>
                 </Link>
               </div>

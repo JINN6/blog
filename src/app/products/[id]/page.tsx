@@ -1,7 +1,7 @@
 'use client';
 import { products } from '../../maal/maal'; 
 import Navbar from '@/components/Navbar'; 
-import { useEffect } from 'react'; 
+import { useState, useEffect } from 'react'; 
 import Footer from '@/components/Footer'; 
 import AOS from 'aos';  
 import 'aos/dist/aos.css';  
@@ -14,6 +14,10 @@ interface ProductProps {
 
 export default function ProductPage({ params }: ProductProps) {
   const product = products.find((p) => p.id === params.id) || null;
+  
+
+  const [comments, setComments] = useState<string[]>([]);
+  const [newComment, setNewComment] = useState<string>("");
 
   useEffect(() => {
     AOS.init({
@@ -21,6 +25,17 @@ export default function ProductPage({ params }: ProductProps) {
       easing: 'ease-in-out',
     });
   }, []);
+
+  const handleAddComment = () => {
+    if (newComment.trim() !== "") {
+      setComments([...comments, newComment.trim()]);
+      setNewComment("");
+    }
+  };
+
+  const handleDeleteComment = (index: number) => {
+    setComments(comments.filter((_, i) => i !== index));
+  };
 
   if (!product) {
     return (
@@ -64,21 +79,39 @@ export default function ProductPage({ params }: ProductProps) {
           <h2 className="text-2xl font-semibold text-purple-500 mb-6">Join the Conversation</h2>
 
           <textarea
-            className="w-full p-4 border-2 border-purple-600 rounded-lg mb-6 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full p-4 border-2 border-purple-600 rounded-lg mb-6 text-white bg-black focus:outline-none focus:ring-2 focus:ring-purple-500"
             rows={4}
+            value={newComment}
+            onChange={(e) => setNewComment(e.target.value)}
             placeholder="Write your comment here..."
-            disabled
           />
 
           <button
+            onClick={handleAddComment}
             className="px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 focus:outline-none transform transition duration-300 ease-in-out hover:scale-105"
-            disabled
           >
             Add Comment
           </button>
 
-          <div className="mt-8">
-            <p className="text-gray-500">No comments yet. Be the first to comment!</p>
+          <div className="mt-8 space-y-4">
+            {comments.length === 0 ? (
+              <p className="text-gray-500">No comments yet. Be the first to comment!</p>
+            ) : (
+              comments.map((comment, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between bg-gray-800 p-4 rounded-lg shadow-md"
+                >
+                  <p className="text-white">{comment}</p>
+                  <button
+                    onClick={() => handleDeleteComment(index)}
+                    className="text-red-500 hover:text-red-700 font-semibold"
+                  >
+                    Delete
+                  </button>
+                </div>
+              ))
+            )}
           </div>
         </div>
 
