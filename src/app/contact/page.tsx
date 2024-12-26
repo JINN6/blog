@@ -14,11 +14,16 @@ const ContactUs = () => {
         });
     }, []);
 
+    const handleFormSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        // Handle form submission logic (e.g., sending an email or saving the data)
+        console.log("Form submitted");
+    };
+
     return (
         <div>
             <Navbarr />
             <div className='bg-black'>
-
 
                 <div className="bg-black">
                     <section className="bg-black text-white py-16" data-aos="fade-up">
@@ -38,14 +43,15 @@ const ContactUs = () => {
                                         We’re here to assist you with any queries. Reach out to us, and we'll get back to you as soon as possible.
                                     </p>
                                     <ul className="text-gray-400">
-                                        <li className="mb-2">📍 Address: 1234 Main Street, Karchi, Pakistan</li>
+                                        <li className="mb-2">📍 Address: 1234 Main Street, Karachi, Pakistan</li>
                                         <li className="mb-2">📞 Phone: +123 456 789</li>
                                         <li className="mb-2">✉️ Email: @yourwebsite.com</li>
                                     </ul>
                                 </div>
 
+                                {/* Right Section with Contact Form */}
                                 <div className="md:w-1/2" data-aos="fade-left">
-                                    <form className="bg-gray-800 p-8 rounded-lg shadow-lg space-y-6">
+                                    <form onSubmit={handleFormSubmit} className="bg-gray-800 p-8 rounded-lg shadow-lg space-y-6">
                                         <div>
                                             <label htmlFor="name" className="text-lg text-gray-300">Full Name</label>
                                             <input
