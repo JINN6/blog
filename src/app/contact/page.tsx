@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useEffect } from 'react';
 import Navbarr from '@/components/Navbarr';
 import Footer from '@/components/Footer';
@@ -16,7 +16,7 @@ const ContactUs = () => {
 
     const handleFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Handle form submission logic (e.g., sending an email or saving the data)
+      
         console.log("Form submitted");
     };
 
@@ -31,16 +31,16 @@ const ContactUs = () => {
                             <div className="text-center mb-12" data-aos="fade-up">
                                 <h2 className="text-5xl font-extrabold text-green-400">Contact Us</h2>
                                 <p className="text-lg text-gray-400 mt-4">
-                                    Have any questions or inquiries? Feel free to get in touch with us. We’d love to hear from you!
+                                    Have any questions or inquiries? Feel free to get in touch with us. We&apos;d love to hear from you!
                                 </p>
                             </div>
 
                             <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-                                {/* Left Section with Contact Information */}
+                                
                                 <div className="md:w-1/2" data-aos="fade-right">
                                     <h3 className="text-3xl font-semibold text-white mb-6">Get in Touch</h3>
                                     <p className="text-lg text-gray-300 mb-4">
-                                        We’re here to assist you with any queries. Reach out to us, and we'll get back to you as soon as possible.
+                                        We&apos;re here to assist you with any queries. Reach out to us, and we&apos;ll get back to you as soon as possible.
                                     </p>
                                     <ul className="text-gray-400">
                                         <li className="mb-2">📍 Address: 1234 Main Street, Karachi, Pakistan</li>
@@ -49,7 +49,7 @@ const ContactUs = () => {
                                     </ul>
                                 </div>
 
-                                {/* Right Section with Contact Form */}
+                            
                                 <div className="md:w-1/2" data-aos="fade-left">
                                     <form onSubmit={handleFormSubmit} className="bg-gray-800 p-8 rounded-lg shadow-lg space-y-6">
                                         <div>

@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const gpp = () => {
+const Gpp = () => {
 
     useEffect(() => {
         AOS.init({
@@ -89,4 +89,4 @@ const gpp = () => {
     );
 };
 
-export default gpp;
+export default Gpp;
