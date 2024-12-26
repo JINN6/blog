@@ -1,7 +1,7 @@
 'use client';
 import { products } from '../../maal/maal'; 
 import Navbar from '@/components/Navbar'; 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react'; 
 import Footer from '@/components/Footer'; 
 import AOS from 'aos';  
 import 'aos/dist/aos.css';  
@@ -14,7 +14,6 @@ interface ProductProps {
 
 export default function ProductPage({ params }: ProductProps) {
   const product = products.find((p) => p.id === params.id) || null;
-
 
   useEffect(() => {
     AOS.init({
