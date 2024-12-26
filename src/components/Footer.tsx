@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-screen-lg mx-auto px-6">
         <div className="flex justify-between items-center mb-6">
        
-          <div className="text-2xl font-semibold">MK Productions</div>
+          <div className="text-2xl font-semibold">Ghost Productions</div>
 
          
           <div className="space-x-4">

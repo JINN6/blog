@@ -14,7 +14,7 @@ const Navbar = () => {
     <div className="flex justify-between items-center p-3 w-full">
    
       <div className="font-extrabold text-3xl text-black lg:pl-20">
-        Brand
+        Ghost
       </div>
 
    
