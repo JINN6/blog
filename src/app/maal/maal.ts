@@ -21,7 +21,7 @@ export const products = [
     },
     {
       id: "3",
-      heading: "Sustainability",
+      heading: "Resilience",
       image: "/sus.png",
       paragraphs: [
         "Sustainability is more important than ever as we face global challenges like climate change and resource depletion. We are seeing unprecedented levels of environmental degradation, with rising temperatures, melting ice caps, and increasing deforestation. The overuse of natural resources, paired with industrial waste, is putting immense pressure on the planet's ecosystems, threatening the delicate balance of life.",
